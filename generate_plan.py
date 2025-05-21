@@ -8,7 +8,7 @@ import json
 import re
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:@localhost/risebody'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://if0_39037004:cFIUhj82G31@sql204.infinityfree.com/if0_39037004_risebody'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 CORS(app, supports_credentials=True)
 db = SQLAlchemy(app)
