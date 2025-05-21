@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f4f4;
+  height: auto;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Preloader wrapper */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Preloader content layout */
+.preloader-content {
+  text-align: center;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Logo animation */
+.preloader-logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00bfff;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: logoPop 0.8s ease-out forwards;
+}
+
+@keyframes logoPop {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Spinner animation */
+.preloader-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #00bfff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide preloader */
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #00bfff;
+}
+
+.cta-button {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-button a {
+  background: #00bfff;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.cta-button a:hover {
+  background: #0099cc;
+}
+
+.cta-button a i {
+  margin-right: 6px;
+}
+
+.signup-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+              url('images/signup-bg.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px; /* gives space for fixed header */
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  margin-top: -80px; /* ✨ pulls the image up behind header */
+  z-index: -1;
+  position: relative;
+}
+
+
+.signup-container {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  margin-top: 40px; /* ✅ pushes the form down away from navbar */
+}
+
+
+.signup-container h2 {
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+
+.signup-container input,
+.signup-container select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+.signup-container button {
+  width: 100%;
+  background: #00bfff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-container button:hover {
+  background: #0099cc;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-left h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin: 8px 0;
+}
+
+.footer-center ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-center ul li a:hover {
+  color: #00bfff;
+}
+
+.social-icons a {
+  color: #00bfff;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0099cc;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .cta-button {
+    margin-top: 15px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .signup-wrapper {
+    padding: 20px;
+    margin-top: 100px;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .signup-container {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 25px 15px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin-bottom: 20px;
+  }
+}
+
